@@ -9,23 +9,22 @@ import kotlinx.coroutines.Job
 import kotlin.reflect.KFunction1
 
 
-
 class JobsAdapter(
-    private val onJobClicked: KFunction1<com.rana.jobs_app_imp.ui.home.Job, Unit>
-    ) : ListAdapter<Job, JobsAdapter.ViewHolder>(
+    private val onJobItemClicked: (JobItem) -> Unit,
+) : ListAdapter<JobItem, JobsAdapter.ViewHolder>(
     DiffCallback()
-    ) {
+) {
 
-        class ViewHolder(
-            private val binding: JobItemLayoutBinding,
-            private val onJobClicked: (job: Job) -> Unit
-        ) : RecyclerView.ViewHolder(binding.root) {
+    class ViewHolder(
+        private val binding: JobItemLayoutBinding,
+        private val onJobClicked: (job: JobItem) -> Unit,
+    ) : RecyclerView.ViewHolder(binding.root) {
 
-            fun bindTo(job: Job) = with(binding) {
+        fun bindTo(job: JobItem) = with(binding) {
 
-                root.setOnClickListener { onJobClicked(job) }
-            }
+            root.setOnClickListener { onJobClicked(job) }
         }
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         TODO("Not yet implemented")
@@ -37,18 +36,18 @@ class JobsAdapter(
 }
 
 
-class DiffCallback : DiffUtil.ItemCallback<Job>() {
+class DiffCallback : DiffUtil.ItemCallback<JobItem>() {
 
     override fun areItemsTheSame(
-        oldItem: Job,
-        newItem: Job
+        oldItem: JobItem,
+        newItem: JobItem,
     ): Boolean {
         return oldItem.id == newItem.id
     }
 
     override fun areContentsTheSame(
-        oldItem: Job,
-        newItem: Job
+        oldItem: JobItem,
+        newItem: JobItem,
     ): Boolean {
         return oldItem == newItem
     }

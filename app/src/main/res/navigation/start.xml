@@ -3,22 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/start"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/startFragment">
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.rana.jobs_app_imp.homeFragment"
+        android:name="com.rana.jobs_app_imp.ui.home.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_details" >
+        tools:layout="@layout/fragment_details">
         <action
             android:id="@+id/action_homeFragment_to_detailsFragment"
             app:destination="@id/detailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/startFragment"
-        android:name="com.rana.jobs_app_imp.startFragment"
+        android:name="com.rana.jobs_app_imp.ui.start.StartFragment"
         android:label="fragment_start"
-        tools:layout="@layout/fragment_start" >
+        tools:layout="@layout/fragment_start">
         <action
             android:id="@+id/action_startFragment_to_homeFragment"
             app:destination="@id/homeFragment" />

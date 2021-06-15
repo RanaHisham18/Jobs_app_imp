@@ -20,9 +20,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     private val adapter = JobsAdapter(::onJobClicked)
     //init the adapter and make it clickable.
 
-    private fun onJobClicked(job: Job) {
+    private fun onJobClicked(jobItem: JobItem) {
         // do whatever u need when the job item clicked
-        Toast.makeText(requireContext(), job.title, Toast.LENGTH_SHORT).show()
+        Toast.makeText(requireContext(), jobItem.title, Toast.LENGTH_SHORT).show()
         //show the job details in a toast for short time.
     }
 

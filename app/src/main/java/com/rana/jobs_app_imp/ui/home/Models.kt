@@ -4,10 +4,10 @@ package com.rana.jobs_app_imp.ui.home
 sealed class HomeState {
 object Loading : HomeState()
     data class Error(val errorMessage: String) : HomeState()
-    data class Success(val jobsList: List<Job>) : HomeState()
+    data class Success(val jobsList: List<JobItem>) : HomeState()
                        }
 
-data class Job(
+data class JobItem(
     //model that contain items to be displayed.
     val id: String,
     val companyName: String,

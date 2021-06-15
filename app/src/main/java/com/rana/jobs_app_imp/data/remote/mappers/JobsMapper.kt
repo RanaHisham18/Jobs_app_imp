@@ -1,12 +1,12 @@
 package com.rana.jobs_app_imp.data.remote.mappers
 
 import com.rana.jobs_app_imp.data.remote.entities.JobResponse
-import com.rana.jobs_app_imp.ui.home.Job
+import com.rana.jobs_app_imp.ui.home.JobItem
 
-fun JobResponse.toJob(): Job? {
+fun JobResponse.toJob(): JobItem? {
     if (company == null || description == null || id == null || title == null) return null
 
-    return Job(
+    return JobItem(
         id = id,
         companyName = company,
         companyLogo = company_logo,
