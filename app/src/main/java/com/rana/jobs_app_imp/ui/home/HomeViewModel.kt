@@ -7,7 +7,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import arrow.core.Either
-import com.rana.jobs_app_imp.data.remote.datasources.IJobsRemoteDataSource
 import kotlinx.coroutines.launch
 import arrow.core.Either.Left as EitherLeft
 
