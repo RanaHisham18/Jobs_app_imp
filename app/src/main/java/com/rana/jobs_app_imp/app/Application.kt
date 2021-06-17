@@ -1,3 +1,5 @@
+package com.rana.jobs_app_imp.app
+
 import android.app.Application
 import coil.Coil
 import coil.ImageLoader
