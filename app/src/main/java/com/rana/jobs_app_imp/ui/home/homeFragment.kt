@@ -38,7 +38,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     }
 
     private fun initViews() {
-        binding.jobsRV.adapter = adapter
+        binding.jobsRv.adapter = adapter
         //set the adapter cells to the jobs by view-binding method.
     }
 
@@ -62,7 +62,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     private fun showLoading() {
         binding.loadingPb.visibility = View.VISIBLE
         //show loading state
-        binding.jobsRV.visibility = View.GONE
+        binding.jobsRv.visibility = View.GONE
         //hide loading state
     }
 
@@ -70,7 +70,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         adapter.submitList(state.jobsList)
         binding.loadingPb.visibility = View.GONE
         //show success state
-        binding.jobsRV.visibility = View.VISIBLE
+        binding.jobsRv.visibility = View.VISIBLE
         //hide success state
     }
     // view binding ( till create ViewBindingDelegate )
